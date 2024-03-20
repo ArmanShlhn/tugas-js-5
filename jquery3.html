@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https:\\cdn.jsdelivr.net\npm\sweetalert2@11"></script>
+    <link rel="stylesheet" href="stylejquery3.css">
+
+    <title>Event Handler</title>
+</head>
+<body>
+    <div class="container">
+        <div id="div1">
+            Aku adalah seekor sapi
+            <audio id="audio1" src="suara_banteng.mp3"></audio>
+        </div>
+        <div id="div2">
+            Aku adalah seekor katak
+            <audio id="audio2" src="suara_katak.mp3"></audio>
+        </div>
+        <div id="div3">
+            Aku adalah seekor elang
+            <audio id="audio3" src="suara_elang.mp3"></audio>
+        </div>
+    </div>
+
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        Swal.fire({
+            title: "Hallo!",
+            text: "Selamat datang dan selamat belajar di kebun binatang online",
+            confirmButtonText: "Tutup"
+        });
+        $("document").ready(function(){
+            $("#div1").mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.sikumis.com/media/frontend/products/sapi-dara.jpg')"
+                });
+                document.getElementById('audio1').play();
+            });
+
+            $("#div1").mouseout(function(){
+                document.getElementById('audio1').pause();
+                document.getElementById('audio1').currentTime = 0;
+                $(this).css({
+                    background: "pink"
+                });
+            });
+            
+            $("#div2").mouseover(function(){
+                $(this).css({
+                    background: "url('https://img.freepik.com/premium-photo/chubby-frog-white-wall_55883-9336.jpg?w=740')"
+                });
+                document.getElementById('audio2').play();
+            });
+            
+            $("#div2").mouseout(function(){
+                document.getElementById('audio2').pause();
+                document.getElementById('audio2').currentTime = 0;
+                $(this).css({
+                    background: "pink"
+                });
+            });
+
+            $("#div3").mouseover(function(){
+                $(this).css({
+                    background: "url('https://tribratanews.polri.go.id/web/image/blog.post/61150/image')"
+                });
+                document.getElementById('audio3').play();
+            });
+
+            $("#div3").mouseout(function(){
+                document.getElementById('audio3').pause();
+                document.getElementById('audio3').currentTime = 0;
+                $(this).css({
+                    background: "pink"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
